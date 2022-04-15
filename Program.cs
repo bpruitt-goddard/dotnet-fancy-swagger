@@ -1,4 +1,5 @@
 using dotnet_fancy_swagger;
+using dotnet_fancy_swagger.Filters;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,8 @@ builder.Services.AddSwaggerGen(c =>
             Description = document.Description
         });
     }
+
+    c.DocumentFilter<AddTagsFilter>();
 });
 
 var app = builder.Build();
