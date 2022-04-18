@@ -21,11 +21,18 @@ public class OrderController : ControllerBase
 
 	[HttpGet("{id}")]
     [SwaggerOperation(Tags = new[] { nameof(Tag.Orders) })]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
 	public ActionResult<Order> GetById(int id)
 	{
         var order = Orders.Find(u => u.id == id);
         
-        return (order is null) ? NotFound() : order;
+        if (order is null)
+        {
+            return NotFound();
+        }
+
+        return order;
 	}
 
     [HttpDelete]
