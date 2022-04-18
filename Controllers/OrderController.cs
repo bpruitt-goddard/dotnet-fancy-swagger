@@ -29,6 +29,7 @@ public class OrderController : ControllerBase
 	}
 
     [HttpDelete]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
     public ActionResult Delete(int id) => NoContent();
 
     [HttpPost]
