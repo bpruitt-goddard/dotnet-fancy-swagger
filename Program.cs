@@ -38,6 +38,7 @@ if (app.Environment.IsDevelopment())
         {
             c.SwaggerEndpoint($"/swagger/{document.Name}/swagger.json", $"{document.Title} {document.Version}");
         }
+        c.InjectJavascript("/custom.js");
     });
 }
 
