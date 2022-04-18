@@ -22,6 +22,7 @@ builder.Services.AddSwaggerGen(c =>
     }
 
     c.DocumentFilter<AddTagsFilter>();
+    c.OperationFilter<DocumentTagFilter>();
 });
 
 var app = builder.Build();
