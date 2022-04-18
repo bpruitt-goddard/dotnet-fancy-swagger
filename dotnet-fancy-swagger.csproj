@@ -5,6 +5,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>dotnet_fancy_swagger</RootNamespace>
+    <!-- Enforce API documentation and treat as errors -->
+    <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
+    <WarningsAsErrors>API1000,API1001</WarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
